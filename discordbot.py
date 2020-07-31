@@ -51,10 +51,19 @@ async def add(ctx, s1: float, s2: float, s3: float, s4: float):
     if abs(sum(scores)) > 0.000001:
         await ctx.send('sum of scores should be 0; type again')
         return
-    scores.sort()
-    scores[0] -= 10
-    scores[1] -= 10
-    scores[3] += 20
+
+    third = scores[:]
+    third.sort()
+    third = third[1]
+
+    for i in scores:
+        if i == max(scores):
+            i += 20
+        elif i == min(scores):
+            i -= 10
+        elif i == third:
+            i -= 10
+
     await ctx.send(scores)
     global scores_db
     global scores_sum
