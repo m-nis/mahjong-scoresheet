@@ -81,7 +81,7 @@ total
 async def delete(ctx):
     """delete previous score"""
     global scores_db
-    ctx.send('deleted previous score: {0}'.format(scores_db[-1]))
+    await ctx.send('deleted previous score: {0}'.format(scores_db[-1]))
     scores_db.pop(-1)
 
 
