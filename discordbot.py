@@ -16,7 +16,6 @@ scores_sum = [0, 0, 0, 0]
 description = '''bot to store/calc mahjong scores'''
 
 token = os.environ['MAHJONG_BOT_TOKEN']
-print(token)
 bot = commands.Bot(command_prefix='/', description=description)
 
 
