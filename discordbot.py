@@ -16,6 +16,7 @@ scores_sum = [0, 0, 0, 0]
 description = '''bot to store/calc mahjong scores'''
 
 token = os.environ['MAHJONG_BOT_TOKEN']
+print(token)
 bot = commands.Bot(command_prefix='/', description=description)
 
 
@@ -79,6 +80,15 @@ total
 # async def del(ctx):
 
 # TODO def command `help` to inform about bot usage
+
+
+@bot.command
+async def help(ctx):
+    global players
+    ctx.send('''`/choose` to choose players and start logging scores
+choose from {0}
+`/add` to add scores (in jantama's result page format like: 10.0)
+'''.format(players))
 
 
 @bot.event
