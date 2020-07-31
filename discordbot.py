@@ -46,7 +46,7 @@ eg) `/add 45.1 4.9 -20.0 -30.0`
 
 @bot.command()
 async def add(ctx, s1: float, s2: float, s3: float, s4: float):
-    """add scores to """
+    """add score and show current scores"""
     scores = [s1, s2, s3, s4]
     if sum(scores) != 0.0:
         await ctx.send('sum of scores should be 0; type again')
