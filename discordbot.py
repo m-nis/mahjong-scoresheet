@@ -56,13 +56,13 @@ async def add(ctx, s1: float, s2: float, s3: float, s4: float):
     third.sort()
     third = third[1]
 
-    for i in scores:
-        if i == max(scores):
-            i += 20
-        elif i == min(scores):
-            i -= 10
-        elif i == third:
-            i -= 10
+    for i in range(len(scores)):
+        if scores[i] == max(scores):
+            scores[i] += 20
+        elif scores[i] == min(scores):
+            scores[i] -= 10
+        elif scores[i] == third:
+            scores[i] -= 10
 
     await ctx.send(scores)
     global scores_db
