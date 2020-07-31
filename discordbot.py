@@ -73,7 +73,7 @@ async def add(ctx, s1: float, s2: float, s3: float, s4: float):
 
     for i in range(4):
         scores_sum[i] += scores[i]
-        scores_sum[i] = round(scores_sum, 1)
+        scores_sum[i] = round(scores_sum[i], 1)
         displayed_player_name[i] = displayed_player_name[i][:5]
     displayed_scores_db = ''
     for i in scores_db:
