@@ -82,7 +82,10 @@ async def delete(ctx):
     """delete previous score"""
     global scores_db
     await ctx.send('deleted previous score: {0}'.format(scores_db[-1]))
-    scores_db.pop(-1)
+    deleted_score = scores_db.pop(-1)
+    global scores_sum
+    for i in range(4):
+        scores_sum[i] -= deleted_score
 
 
 @bot.event
