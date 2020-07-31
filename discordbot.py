@@ -98,6 +98,13 @@ async def delete(ctx):
         scores_sum[i] -= deleted_score[i]
         scores_sum[i] = round(scores_sum[i], 1)
 
+    await ctx.send('''```
+{0}
+{1}
+
+total
+{2}```'''.format(displayed_player_name, displayed_scores_db, scores_sum))
+
 
 @bot.event
 async def on_command_error(ctx, error):
