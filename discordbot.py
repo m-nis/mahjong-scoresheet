@@ -25,8 +25,8 @@ async def on_ready():
 
 
 @bot.command()
-async def choose(ctx, p1: int, p2: int, p3: int, p4: int) -> list:
-    """choose 4 players and start new game
+async def select(ctx, p1: int, p2: int, p3: int, p4: int) -> list:
+    """select 4 players and start new game
 {0: 'nishiya', 1: 'hattori', 2: 'sugai aka kasu', 3: 'ofuji',
 4: 'nakamura', 5: 'yamada', 6: 'takeda', 7: 'komoto', 8: 'arisawa', 9: 'kogai'}"""
     # TODO check if there are no
@@ -38,7 +38,7 @@ async def choose(ctx, p1: int, p2: int, p3: int, p4: int) -> list:
     global cur_players
     cur_players = [players[p1], players[p2], players[p3], players[p4]]
 
-    await ctx.send('you chose: {0}'.format(cur_players))
+    await ctx.send('you selected: {0}'.format(cur_players))
     await ctx.send('''add scores using `/add` command
 eg) `/add 45.1 4.9 -20.0 -30.0`
 *tobashitara +10, tobasaretara -10 shiteoite''')
