@@ -27,7 +27,9 @@ async def on_ready():
 
 @bot.command()
 async def choose(ctx, p1: int, p2: int, p3: int, p4: int) -> list:
-    """choose 4 players from dictionary: players"""
+    """choose 4 players and start new game
+{0: 'nishiya', 1: 'hattori', 2: 'sugai aka kasu', 3: 'ofuji',
+4: 'nakamura', 5: 'yamada', 6: 'takeda', 7: 'komoto', 8: 'arisawa', 9: 'kogai'}"""
     # TODO check if there are no
     # initialization
     global scores_db
@@ -45,7 +47,7 @@ eg) `/add 45.1 4.9 -20.0 -30.0`
 
 @bot.command()
 async def add(ctx, s1: float, s2: float, s3: float, s4: float):
-    """convert game score to final score"""
+    """add scores to """
     scores = [s1, s2, s3, s4]
     if sum(scores) != 0.0:
         await ctx.send('sum of scores should be 0; type again')
@@ -75,11 +77,13 @@ async def add(ctx, s1: float, s2: float, s3: float, s4: float):
 total
 {2}```'''.format(displayed_player_name, displayed_scores_db, scores_sum))
 
-# TODO def command `del` to delete 1 previous score
-# @bot.command()
-# async def del(ctx):
 
-# TODO def command `help` to inform about bot usage
+@bot.command()
+async def delete(ctx):
+    """delete previous score"""
+    global scores_db
+    ctx.send('deleted previous score: {0}'.format(scores_db[-1]))
+    scores_db.pop(-1)
 
 
 @bot.event
