@@ -98,6 +98,14 @@ async def delete(ctx):
         scores_sum[i] -= deleted_score[i]
         scores_sum[i] = round(scores_sum[i], 1)
 
+    global cur_players
+    displayed_player_name = cur_players[:]
+    for i in range(4):
+        displayed_player_name[i] = displayed_player_name[i][:5]
+    displayed_scores_db = ''
+    for i in scores_db:
+        displayed_scores_db += str(i) + '\n'
+
     await ctx.send('''```
 {0}
 {1}
