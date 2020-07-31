@@ -94,7 +94,7 @@ async def delete(ctx):
     deleted_score = scores_db.pop(-1)
     global scores_sum
     for i in range(4):
-        scores_sum[i] -= deleted_score
+        scores_sum[i] -= deleted_score[i]
 
 
 @bot.event
