@@ -82,15 +82,6 @@ total
 # TODO def command `help` to inform about bot usage
 
 
-@bot.command
-async def help(ctx):
-    global players
-    ctx.send('''`/choose` to choose players and start logging scores
-choose from {0}
-`/add` to add scores (in jantama's result page format like: 10.0)
-'''.format(players))
-
-
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
